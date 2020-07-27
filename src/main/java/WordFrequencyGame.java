@@ -15,7 +15,7 @@ public class WordFrequencyGame {
 
             try {
 
-                //split the input string with 1 to n pieces of spaces
+
                 List<WordInfo> wordInfos = calculateWordFrequency(sentence);
 
                 wordInfos.sort((w1, w2) -> w2.getWordCount() - w1.getWordCount());
