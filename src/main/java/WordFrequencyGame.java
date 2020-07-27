@@ -18,7 +18,7 @@ public class WordFrequencyGame {
 
                 List<WordInfo> wordInfos = calculateWordFrequency(sentence);
 
-                wordInfos.sort((w1, w2) -> w2.getWordCount() - w1.getWordCount());
+                wordInfos.sort((wordInfo1, wordInfo2) -> wordInfo2.getWordCount() - wordInfo1.getWordCount());
 
                 return getWordFrequencyResult(wordInfos);
             } catch (Exception e) {
