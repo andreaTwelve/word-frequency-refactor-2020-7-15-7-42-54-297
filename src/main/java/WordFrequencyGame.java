@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class WordFrequencyGame {
-
     private static final String BLANK_SPACE = "\\s+";
     private static final String NEW_LINE = "\n";
     private static final String CALCULATE_ERROR = "Calculate Error";
@@ -9,14 +8,11 @@ public class WordFrequencyGame {
     public String getResult(String sentence) {
         try {
             List<WordInfo> wordInfos = calculateWordFrequency(sentence);
-
             wordInfos.sort((wordInfo1, wordInfo2) -> wordInfo2.getWordCount() - wordInfo1.getWordCount());
-
             return getWordFrequencyResult(wordInfos);
         } catch (Exception e) {
             return CALCULATE_ERROR;
         }
-
     }
 
     private List<WordInfo> calculateWordFrequency(String sentence) {
@@ -36,6 +32,4 @@ public class WordFrequencyGame {
         }
         return joiner.toString();
     }
-
-
 }
