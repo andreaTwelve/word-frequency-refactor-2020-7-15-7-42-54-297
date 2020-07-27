@@ -6,17 +6,17 @@ public class WordFrequencyGame {
     private static final String NEW_LINE = "\n";
     private static final String CALCULATE_ERROR = "Calculate Error";
 
-    public String getResult(String inputStr) {
+    public String getResult(String sentence) {
 
 
-        if (inputStr.split(BLANK_SPACE).length==1) {
-            return inputStr + " 1";
+        if (sentence.split(BLANK_SPACE).length==1) {
+            return sentence + " 1";
         } else {
 
             try {
 
                 //split the input string with 1 to n pieces of spaces
-                String[] arr = inputStr.split(BLANK_SPACE);
+                String[] arr = sentence.split(BLANK_SPACE);
 
                 List<Input> inputList = new ArrayList<>();
                 for (String s : arr) {
