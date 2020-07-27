@@ -29,34 +29,18 @@ public class WordFrequencyGame {
 
     private List<WordInfo> calculateWordFrequency(String sentence) {
         List<String> words = Arrays.asList(sentence.split(BLANK_SPACE));
-
         List<WordInfo> wordInfos = new ArrayList<>();
         for (String uniqueWord: new HashSet<>(words)) {
             wordInfos.add(new WordInfo(uniqueWord, Collections.frequency(words, uniqueWord)));
         }
-
-//        for (String s : arr) {
-//            WordInfo wordInfo = new WordInfo(s, 1);
-//            wordInfos.add(wordInfo);
-//        }
-//
-//        //get the map for the next step of sizing the same word
-//        Map<String, List<WordInfo>> map =getListMap(wordInfos);
-//
-//        List<WordInfo> list = new ArrayList<>();
-//        for (Map.Entry<String, List<WordInfo>> entry : map.entrySet()) {
-//            WordInfo wordInfo = new WordInfo(entry.getKey(), entry.getValue().size());
-//            list.add(wordInfo);
-//        }
-//        wordInfos = list;
         return wordInfos;
     }
 
     private String getWordFrequencyResult(List<WordInfo> wordInfos) {
         StringJoiner joiner = new StringJoiner(NEW_LINE);
         for (WordInfo w : wordInfos) {
-            String s = w.getValue() + " " +w.getWordCount();
-            joiner.add(s);
+            String wordInfo = w.getValue() + " " +w.getWordCount();
+            joiner.add(wordInfo);
         }
         return joiner.toString();
     }
